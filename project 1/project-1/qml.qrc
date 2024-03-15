@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Popup.qml</file>
+        <file>Form.qml</file>
+        <file>Savedform.qml</file>
+    </qresource>
+</RCC>
