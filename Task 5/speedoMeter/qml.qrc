@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Circularguage.qml</file>
+        <file>Guge.qml</file>
+    </qresource>
+</RCC>
