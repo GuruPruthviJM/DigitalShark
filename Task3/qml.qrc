@@ -6,5 +6,6 @@
         <file>TabView.qml</file>
         <file>View.qml</file>
         <file>Edit.qml</file>
+        <file>Popup.qml</file>
     </qresource>
 </RCC>

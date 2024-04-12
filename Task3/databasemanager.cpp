@@ -34,6 +34,7 @@ void DatabaseManager::initializeDatabase() {
 }
 
 
+
 void DatabaseManager::insertData(QString namePerson, QString passwordPerson, QString agePerson, QString genderPerson) {
     if (!m_database.isOpen()) {
         qWarning() << "Error: database not open";
@@ -59,7 +60,6 @@ QVariantList DatabaseManager::fetchData() {
         qWarning() << "Error: could not fetch data" << query.lastError().text();
         return result;
     }
-
     while (query.next()) {
         QVariantMap row;
         row["id"] = query.value("id").toInt(); // Renaming "rowid" to "id"
@@ -69,7 +69,6 @@ QVariantList DatabaseManager::fetchData() {
         row["Gender"] = query.value("Gender").toString();
         result.append(row);
     }
-
     return result;
 }
 
@@ -97,7 +96,6 @@ QVariantList DatabaseManager::fetchDataP(int rowId) {
         row["Gender"] = query.value("Gender").toString();
         result.append(row);
     }
-
     return result;
 }
 

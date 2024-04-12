@@ -23,9 +23,8 @@ Window {
     TabView{
         id: tableView
         visible: false
-        enabled: false
-        onToRegistration: {
-            registerationId.fromTab(rowId,name,pass,age,gender)
+        onToRegister: {
+            registerationId.fromTab(rowId,name,password,age,gender)
         }
     }
     View{
@@ -38,6 +37,16 @@ Window {
         onToView: {
             viewId.updateDat()
         }
+        onToPop: {
+            popId.visible=true
+            editId.opacity=0.2
+            editId.enabled=false
+            popId.fromEdit(name,password,age,gender,rowid)
+        }
+    }
+    Popup{
+        id: popId
+        visible: false
     }
     Component.onCompleted: {
         databaseManager.initializeDatabase()

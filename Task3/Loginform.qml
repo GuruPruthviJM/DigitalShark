@@ -9,11 +9,10 @@ Item {
     property string name: ""
     signal new_register()
     signal toTable()
-    function fromAny(){
+    onVisibleChanged: {
         nameInputId.text=""
         passwordInputId.text=""
     }
-
     Text {
         id: formTextId
         x: parent.width*0.35
@@ -149,9 +148,13 @@ Item {
                     if(databaseManager.verifyLogin(nameInputId.text,passwordInputId.text)){
                         loginFormId.visible=false
                         tableView.visible=true
-                        tableView.updateData()
+                        tableView.updateDat()
+                    }else if(nameInputId.text.length===0||passwordInputId.text.length===0){
+                        invalid.visible=true
+                        invalid.text="*Please Enter the details completly!!"
                     }else{
                         invalid.visible=true
+                        invalid.text="*Please check ur credentials"
                     }
                 }
             }
